@@ -190,3 +190,14 @@ git fetch  origin master
  //从远程获取最新的到本地，首先从远程的origin的master主分支下载最新的版本到origin/master分支上，然后比较本地的master分支和origin/master分支的差别，最后进行合并。
 git fetch比git pull更加安全
 ```
+24、远程分支操作
+* 推送到远程分支
+``` bash
+git push origin dbg_lichen_star:dbg_lichen_star
+```
+* 删除远程分支
+``` bash
+git push origin :dbg_lichen_star
+or
+git push origin --delete dbg_lichen_star
+```
