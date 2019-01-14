@@ -3,7 +3,7 @@ title: git命令
 date: 2018-11-11 20:35:44
 tags:
 ---
-
+![git流程图](git.webp)
 1、初始化仓库
 ``` bash
 git init
@@ -179,7 +179,9 @@ git branch --set-upstream 本地分支 远程分支 # 建立本地分支与远�
 ``` bash
 git tag 标签 //打标签命令，默认为HEAD
 git tag //显示所有标签
-git tag 标签 �版本号 //给某个commit版本添加标签
+git tag -a 标签 -m 备注版本号 //给某个commit版本添加标签
+git push origin --tags //推送到远程
+git push origin 标签 //推送指定标签
 git show 标签 //显示某个标签的详细信息
 ```
 
@@ -200,4 +202,9 @@ git push origin dbg_lichen_star:dbg_lichen_star
 git push origin :dbg_lichen_star
 or
 git push origin --delete dbg_lichen_star
+```
+* 与远程分支建立跟踪信息
+
+``` bash
+git branch --set-upstream-to=origin/dev-prediction
 ```

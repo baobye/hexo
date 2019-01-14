@@ -111,16 +111,20 @@
       }
     };
     var render = function render(res) {
+      debugger
       var ulTmpl = "";
       for (var j = 0, len2 = res.list.length; j < len2; j++) {
         var data = res.list[j].arr;
         var liTmpl = "";
         for (var i = 0, len = data.link.length; i < len; i++) {
-          var minSrc = 'http://litten.me/ins-min/' + data.link[i] + '.min.jpg';
-          var src = 'http://litten.me/ins/' + data.link[i];
+          //var minSrc = 'http://litten.me/ins-min/' + data.link[i] + '.min.jpg';
+          //var src = 'http://litten.me/ins/' + data.link[i];
+          var minSrc = 'https://raw.githubusercontent.com/baobye/BlogPicture/master/min_photos/' + data.link[i] + '.png';
+          var src = 'https://raw.githubusercontent.com/baobye/BlogPicture/master/photos/' + data.link[i];
+
           var type = data.type[i];
-          var target = src + (type === 'video' ? '.mp4' : '.jpg');
-          src += '.jpg';
+          var target = src + (type === 'video' ? '.mp4' : '.png');
+          src += '.png';
 
           liTmpl += '<figure class="thumb" itemprop="associatedMedia" itemscope="" itemtype="http://schema.org/ImageObject">\
                 <a href="' + src + '" itemprop="contentUrl" data-size="640x640" data-type="' + type + '" data-target="' + target + '">\
@@ -144,6 +148,7 @@
     };
 
     var ctrler = function ctrler(data) {
+      debugger
       var imgObj = {};
       for (var i = 0, len = data.length; i < len; i++) {
         var y = data[i].y;
